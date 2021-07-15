@@ -30,7 +30,7 @@ window.addEventListener('click', function(event) {
 
         particlesArray.push(new Particle(mouse.x, mouse.y, Math.random() * 30 + 5,'hsl('+hue+',100%,50%)')); 
     }
-    console.log(particlesArray); 
+    // console.log(particlesArray); 
 })
 
 class Particle { 
@@ -127,7 +127,7 @@ function handleCollision() {
                 ctx.fill(); 
             }
         }
-        if(collisionParticles[i].y > canvas.height) {
+        if(collisionParticles[i].y < 0 || collisionParticles[i].x<0) {
             collisionParticles.splice(i,1); 
             i--; 
         }
